@@ -1,0 +1,182 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', 'sans-serif';
+    
+    
+}
+
+.topberContainer{
+    height: 50px;
+    min-width: 100%;
+    background-color: #1877f2;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.topberLeft{
+    flex: 4;
+    
+}
+
+.logo{
+    font-size: 24px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+@media (max-width:800px) {
+    .logo{
+        display: none;
+    }
+}
+.topberCenter{
+flex: 6;
+
+
+}
+
+.searchbar{
+width: 100%;
+height: 30px;
+background-color: white;
+border-radius: 30px;
+display: flex;
+align-items: center;
+}
+.searchIcon{
+    font-size: 20px !important;
+    margin-left: 10px;
+    
+}
+.SearchInput{
+    border: none;
+   
+    border-radius: 30px;
+    padding: 0px 10px;
+}
+.SearchInput:focus{
+outline: none;
+}
+@media (max-width: 500px) {
+    .SearchInput{
+        padding: 0px;
+        width: 0%;
+      
+    }
+    .searchbar{
+        width: 0%;
+    }
+    .searchIcon{
+        color: white;
+    }
+}
+
+.topberRight{
+flex: 4;
+display: flex;
+align-items: center;
+justify-content: end;
+color: white;
+padding: 10px;
+}
+
+.topbarLink{
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.topberIcons{
+    display: flex;
+    /* background-color: red; */
+    margin-right: 20px;
+}
+.topberIconsItme{
+    margin-right: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.topberItemBadge{
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    top:  -5px;
+    right: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+.topberImg{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+
+.logoutbar{
+    position: absolute;
+    min-width:30%;
+    min-height: 350px;
+    /* background-color: red; */
+    top: 45px;
+    right: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    background-color: white;
+  
+   
+    
+    }
+
+    .drawer{
+        padding:  20px 10px;
+    }
+    .spanUser{
+        width: 100%;
+        /* background-color:red; */
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        color: black;
+        border-radius: 10px;
+    box-shadow: 0px 3px 10px black;
+    margin-bottom: 20px;
+
+    }
+
+    .rightbarListItem{
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        color: black;
+        cursor: pointer;
+
+    }
+    .rightbarListItem:hover{
+        background-color: rgb(243, 241, 241);
+        border-radius: 10px;
+    }
+
+    .spanUser img{
+        margin-right: 10px;
+    }
+
+
+    @media (max-width: 636px) {
+        .feed{
+            flex:7;
+        }
+    }
