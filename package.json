@@ -35,5 +35,5 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "vite": "^5.2.0"
   },
-  "proxy": "htpp://localhost:5000/api"
+  "proxy": "https://facebook-backend-kappa.vercel.app/api"
 }
