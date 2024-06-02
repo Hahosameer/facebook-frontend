@@ -10,10 +10,9 @@ import person11 from "../../../public/assets/person/11.jpeg";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { serverUrl } from "../../utils/appConstants";
+import { serverUrl } from "../../utils/appConstants.js";
 
 export default function Share() {
-  // const { user } = useContext(AuthContext);
   const user = JSON.parse(localStorage.getItem("loginUser"));
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const desc = useRef();
@@ -45,6 +44,7 @@ export default function Share() {
       console.log(error);
     }
   };
+
   console.log(file, "file name ma kiya a raha ha  ");
 
   return (

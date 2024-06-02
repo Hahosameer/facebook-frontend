@@ -32,7 +32,7 @@ export default function Post({ post }) {
   // console.log(user);
   const likeHandle = () => {
     try {
-      axios.put(`${serverUrl}/api/posts/" + post._id + "/like`, {
+      axios.put(`${serverUrl}/api/posts/"  ${post._id}  "/like`, {
         userId: currentUser._id,
       });
     } catch (error) {}
