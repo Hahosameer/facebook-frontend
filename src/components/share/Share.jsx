@@ -37,7 +37,7 @@ export default function Share() {
         console.log("Error uploading file:", error);
       }
     }
-
+console.log(newPost , "new post");
     try {
       await axios.post(`${serverUrl}/api/posts`, newPost);
       window.location.reload();
