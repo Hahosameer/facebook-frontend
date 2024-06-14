@@ -14,7 +14,7 @@ export default function Post({ post }) {
   const [isLiked, setIsLiked] = useState(post.isLiked);
   const [user, setUser] = useState({});
   const { user: currentUser } = useContext(AuthContext);
- 
+
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser?._id));
   }, [currentUser?._id, post.like]);
@@ -65,7 +65,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={PF + post.img} alt="" />
+          <img className="postImg" src={post.img} alt="" />
         </div>
         <div className="postBottom">
           <div className="postbottomLeft">

@@ -4,9 +4,8 @@ import LabelIcon from "@mui/icons-material/Label";
 import RoomIcon from "@mui/icons-material/Room";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import CancelIcon from "@mui/icons-material/Cancel";
-import person1 from "../../../public/assets/person/1.jpeg";
-import { useContext, useRef, useState } from "react";
 import person11 from "../../../public/assets/person/11.jpeg";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -24,28 +23,28 @@ export default function Share() {
       userId: user._id,
       desc: desc.current.value,
     };
+
     if (file) {
       const data = new FormData();
       const fileName = Date.now() + file.name;
       data.append("name", fileName);
       data.append("file", file);
-      newPost.img = fileName;
-      console.log(newPost);
+
       try {
-        await axios.post(`${serverUrl}/api/upload`, data);
+        const uploadRes = await axios.post(`${serverUrl}/api/upload`, data);
+        newPost.img = uploadRes.data.url; // Assign the Cloudinary URL to newPost.img
       } catch (error) {
-        console.log(error);
+        console.log("Error uploading file:", error);
       }
     }
+
     try {
       await axios.post(`${serverUrl}/api/posts`, newPost);
-      // window.location.reload();
+      window.location.reload();
     } catch (error) {
-      console.log(error);
+      console.log("Error creating post:", error);
     }
   };
-
-  console.log(file, "file name ma kiya a raha ha  ");
 
   return (
     <div className="share">
@@ -58,7 +57,6 @@ export default function Share() {
               alt=""
             />
           </Link>
-
           <input
             placeholder={"What's in your mind " + user?.username + "?"}
             className="shareInput"
