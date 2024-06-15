@@ -45,7 +45,8 @@ export default function Share() {
       console.log("Error creating post:", error);
     }
   };
-  console.log(file, "file name ma kiya a raha ha  ");
+  console.log(file, "file  batao name ma kiya a raha ha  ");
+  console.log(file, "file  batao name ma kiya a raha ha  ");
   return (
     <div className="share">
       <div className="shareWrapper">
