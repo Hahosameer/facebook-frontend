@@ -37,15 +37,15 @@ export default function Share() {
         console.log("Error uploading file:", error);
       }
     }
-console.log(newPost , "new post");
     try {
       await axios.post(`${serverUrl}/api/posts`, newPost);
+      console.log(newPost , "new poZZZZZZZZst");
       window.location.reload();
     } catch (error) {
       console.log("Error creating post:", error);
     }
   };
-
+  console.log(file, "file name ma kiya a raha ha  ");
   return (
     <div className="share">
       <div className="shareWrapper">
