@@ -3,8 +3,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import Person from "@mui/icons-material/Person";
 import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react"; // Import useState
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import person11 from "../../../public/assets/person/11.jpeg";
 import { AuthContext } from "../../components/context/AuthContext";
 import TemporaryDrawer from "../Drawer";
@@ -18,14 +18,12 @@ import {
   ExitToApp as LogoutIcon,
 } from "@mui/icons-material";
 
-
-
-
 export default function Topbar() {
   const { user, dispatch } = useContext(AuthContext);
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [logoutBarOpen, setLogoutBarOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const navigate = useNavigate(); // Add useNavigate hook
 
   useEffect(() => {
     const loggedInUser = JSON.parse(localStorage.getItem("loginUser"));
@@ -46,6 +44,7 @@ export default function Topbar() {
     });
     localStorage.removeItem("loginUser");
     setLoggedInUser(null);
+    navigate("/login"); // Redirect to login page
   };
 
   const toggleLogoutBar = () => {
@@ -70,9 +69,7 @@ export default function Topbar() {
           <span className="logo">Facebook</span>
         </Link>
       </div>
-      <div>
-            
-            </div>
+      <div></div>
       <div className="topberCenter">
         <div className="searchbar">
           <SearchIcon className="searchIcon" />
@@ -120,7 +117,7 @@ export default function Topbar() {
                   to={`/profile/${loggedInUser?.username}`}
                   style={{ textDecoration: "none" }}
                 >
-                  <li className="rightbarListItem" >
+                  <li className="rightbarListItem">
                     {loggedInUser && (
                       <img
                         src={
@@ -141,11 +138,11 @@ export default function Topbar() {
 
               <li className="rightbarListItem">
                 <SettingsIcon className="sidebarIcon" />
-                <span className="sidebarItemText">Settings & privacy </span>
+                <span className="sidebarItemText">Settings & privacy</span>
               </li>
               <li className="rightbarListItem">
                 <HelpIcon className="sidebarIcon" />
-                <span className="sidebarItemText">Help & support </span>
+                <span className="sidebarItemText">Help & support</span>
               </li>
               <li className="rightbarListItem">
                 <AccessibilityIcon className="sidebarIcon" />
@@ -155,7 +152,7 @@ export default function Topbar() {
               </li>
               <li className="rightbarListItem">
                 <FeedbackIcon className="sidebarIcon" />
-                <span className="sidebarItemText">Give feedback </span>
+                <span className="sidebarItemText">Give feedback</span>
               </li>
               {loggedInUser && (
                 <li className="rightbarListItem" onClick={logoutHandler}>
