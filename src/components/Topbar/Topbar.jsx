@@ -100,9 +100,7 @@ export default function Topbar() {
         {loggedInUser && (
           <img
             src={
-              loggedInUser.profilePicture
-                ? PF + loggedInUser?.profilePicture
-                : person11
+              person11
             }
             alt=""
             className="topberImg"

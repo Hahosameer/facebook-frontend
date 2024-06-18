@@ -4,7 +4,7 @@ export default function OnLine({user}) {
   return (
     <li className="rightbarFriend">
         <div className="rightbarPrifileImgContainer">
-          <img className="rightbarProfileImg" src={PF + user.profilePicture} alt="" />
+          <img className="rightbarProfileImg" src={user.profilePicture} alt="" />
           <span className="rightbarOnline"></span>
         </div>
         <span className="rightbarUserName">{user.username}</span>

@@ -101,53 +101,52 @@ export default Posts;
  export const Users = [
    {
      id: 1,
-     profilePicture: "person/1.jpeg",
+     profilePicture: "public/assets/person/1.jpeg",
      username: "Safak",
-    
    },
    {
      id: 2,
-     profilePicture: "person/2.jpeg",
+     profilePicture: "public/assets/person/2.jpeg",
      username: "Sameer",
    },
    {
      id: 3,
-     profilePicture: "person/3.jpeg",
+     profilePicture: "public/assets/person/3.jpeg",
      username: "Talha",
    },
    {
      id: 4,
-     profilePicture: "person/4.jpeg",
+     profilePicture: "public/assets/person/4.jpeg",
      username: "Haroon",
    },
    {
      id: 5,
-     profilePicture: "person/5.jpeg",
+     profilePicture: "public/assets/person/5.jpeg",
      username: "Jon Doe",
    },
    {
      id: 6,
-     profilePicture: "person/6.jpeg",
+     profilePicture: "public/assets/person/6.jpeg",
      username: "Sheraz",
    },
    {
      id: 7,
-     profilePicture: "person/7.jpeg",
+     profilePicture: "public/assets/person/7.jpeg",
      username: "Ahad",
    },
    {
      id: 8,
-     profilePicture: "person/8.jpeg",
+     profilePicture: "public/assets/person/8.jpeg",
      username: "Razzak",
    },
    {
      id: 9,
-     profilePicture: "person/9.jpeg",
+     profilePicture: "public/assets/person/9.jpeg",
      username: "Alex Durden",
    },
    {
      id: 10,
-     profilePicture: "person/10.jpeg",
+     profilePicture: "public/assets/person/10.jpeg",
      username: "Faizan",
    },
  ];

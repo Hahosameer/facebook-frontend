@@ -18,6 +18,7 @@ import person9 from "../../../public/assets/person/9.jpeg";
 import person10 from "../../../public/assets/person/10.jpeg";
 import person11 from "../../../public/assets/person/11.jpeg";
 import person12 from "../../../public/assets/person/12.jpg";
+import noCover from "../../../public/assets/post/8.jpeg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { serverUrl } from "../../utils/appConstants";
@@ -49,12 +50,12 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src={user.coverPicture ? PF + user.coverPicture : PF + "person/noCover.png"}
+                src={noCover}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src={ user.profilePicture ?PF + user.profilePicture : PF + "person/11.jpeg"}
+                src={person11}
                 alt=""
               />
             </div>

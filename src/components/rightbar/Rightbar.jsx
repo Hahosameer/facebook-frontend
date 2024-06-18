@@ -8,7 +8,8 @@ import { AuthContext } from "../context/AuthContext.jsx";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { serverUrl } from "../../utils/appConstants";
-
+import gift from "../../../public/assets/gift.png";
+import adpmg from "../../../public/assets/ad.png";
 
 export default function Rightbar({ user }) {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
@@ -58,12 +59,12 @@ export default function Rightbar({ user }) {
     return (
       <div className="container">
         <div className="birthdayContainer">
-          <img className="birthdayImg" src={PF + "gift.png"} alt="" />
+          <img className="birthdayImg" src={gift} alt="" />
           <span className="birthdayText">
             <b>Pola Foster </b> and <b>3 other friends</b> hav a birhday today
           </span>
         </div>
-        <img className="rightbarAd" src={PF + "ad.png"} alt="" />
+        <img className="rightbarAd" src={adpmg} alt="" />
         <h4 className="rightbarTittle">Online Friends</h4>
 
         <ul className="rightbarFriendList">

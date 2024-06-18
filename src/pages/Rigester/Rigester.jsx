@@ -23,7 +23,7 @@ export default function Rigester() {
 
       try {
         await axios.post(`${serverUrl}/api/auth/register`, user);
-        navigate('/login'); // Navigate to login page after successful registration
+        navigate('/'); // Navigate to login page after successful registration
       } catch (error) {
         console.log(error);
       }

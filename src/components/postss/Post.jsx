@@ -8,6 +8,7 @@ import likepng from "../../../public/assets/like.png";
 import heart from "../../../public/assets/heart.png";
 import { AuthContext } from "../context/AuthContext";
 import { serverUrl } from "../../utils/appConstants";
+import person11 from "../../../public/assets/person/11.jpeg";
 export default function Post({ post }) {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const [like, setLike] = useState(post.likes.length);
@@ -49,9 +50,7 @@ export default function Post({ post }) {
               <img
                 className="postProfileImg"
                 src={
-                  user.profilePicture
-                    ? PF + user.profilePicture
-                    : "person/11.jpeg"
+                person11
                 }
               />
             </Link>
@@ -65,7 +64,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.img} alt="" />
+          <img className="postImg" src={post?.img} alt="" />
         </div>
         <div className="postBottom">
           <div className="postbottomLeft">
