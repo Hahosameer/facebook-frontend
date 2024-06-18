@@ -32,7 +32,7 @@ export default function Share() {
 
       try {
         const uploadRes = await axios.post(`${serverUrl}/api/upload`, data);
-        console.log("File uploaded:", uploadRes.data);
+        console.log("File uploadedsdddddddddddddddddddddd:", uploadRes.data);
         newPost.img = uploadRes.data.url; // Assign the Cloudinary URL to newPost.img
       } catch (error) {
         console.log("Error uploading file:", error);
@@ -41,13 +41,13 @@ export default function Share() {
     try {
       await axios.post(`${serverUrl}/api/posts`, newPost);
       console.log(newPost , "new poZZZZZZZZst");
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.log("Error creating post:", error);
     }
   };
   console.log(file, "file  batao name ma kiya a raha ha  ");
-  console.log(file, "file  batao name ma kiya a raha ha  ");
+  
   return (
     <div className="share">
       <div className="shareWrapper">
