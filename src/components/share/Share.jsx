@@ -32,7 +32,7 @@ export default function Share() {
 
       try {
         const uploadRes = await axios.post(`${serverUrl}/api/upload`, data);
-        console.log("File uploadedsdddddddddddddddddddddd:", uploadRes.data);
+        console.log("File upload:", uploadRes.data);
         newPost.img = uploadRes.data.url; // Assign the Cloudinary URL to newPost.img
       } catch (error) {
         console.log("Error uploading file:", error);
