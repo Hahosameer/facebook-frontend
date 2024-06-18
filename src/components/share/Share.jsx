@@ -41,7 +41,7 @@ export default function Share() {
     try {
       await axios.post(`${serverUrl}/api/posts`, newPost);
       console.log(newPost , "new poZZZZZZZZst");
-      // window.location.reload();
+      window.location.reload();
     } catch (error) {
       console.log("Error creating post:", error);
     }
