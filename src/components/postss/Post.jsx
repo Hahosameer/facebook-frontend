@@ -57,8 +57,7 @@ export default function Post({ post }) {
             <Link to={`profile/${user.username}`}>
               <img
                 className="postProfileImg"
-                src={ user.profilePicture
-                  ?  user.profilePicture: person11}
+                src={person11}
               />
             </Link>
             <span className="postUserName">{user.username}</span>
