@@ -9,16 +9,23 @@ import heart from "../../../public/assets/heart.png";
 import { AuthContext } from "../context/AuthContext";
 import { serverUrl } from "../../utils/appConstants";
 import person11 from "../../../public/assets/person/11.jpeg";
+import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import SmsIcon from '@mui/icons-material/Sms';
+import RepeatIcon from '@mui/icons-material/Repeat';
+import SendIcon from '@mui/icons-material/Send';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+
 export default function Post({ post }) {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(post.isLiked);
   const [user, setUser] = useState({});
   const { user: currentUser } = useContext(AuthContext);
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     setIsLiked(post.likes.includes(currentUser?._id));
-  }, [currentUser?._id, post.like]);
+  }, [currentUser?._id, post.likes]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -30,15 +37,16 @@ export default function Post({ post }) {
     fetchUsers();
   }, [post.userId]);
 
-  // console.log(user);
   const likeHandle = () => {
     try {
-      axios.put(`${serverUrl}/api/posts/"  ${post._id}  "/like`, {
+      axios.put(`${serverUrl}/api/posts/${post._id}/like`, {
         userId: currentUser._id,
       });
     } catch (error) {}
     setLike(isLiked ? like - 1 : like + 1);
     setIsLiked(!isLiked);
+    setAnimate(true);
+    setTimeout(() => setAnimate(false), 300);
   };
 
   return (
@@ -49,13 +57,11 @@ export default function Post({ post }) {
             <Link to={`profile/${user.username}`}>
               <img
                 className="postProfileImg"
-                src={
-                person11
-                }
+                src={ user.profilePicture
+                  ?  user.profilePicture: person11}
               />
             </Link>
             <span className="postUserName">{user.username}</span>
-
             <span className="postdate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
@@ -71,13 +77,11 @@ export default function Post({ post }) {
             <img
               className="likeIcon"
               src={likepng} // Check if this path is correct
-              onClick={likeHandle}
               alt=""
             />
             <img
               className="likeIcon"
               src={heart} // Check if this path is correct
-              onClick={likeHandle}
               alt=""
             />
             <span className="postLikeCounter">{like} people liked it</span>
@@ -85,6 +89,28 @@ export default function Post({ post }) {
           <div className="postbottomRight">
             <span className="postcommentText">{post.comment} Comments</span>
           </div>
+        </div>
+        <div className="SocialActions">
+          <button onClick={likeHandle} className={`likeButton ${animate ? 'animate' : ''}`}>
+            {isLiked ? (
+              <ThumbUpIcon sx={{ color: 'black' }} /> // Black colored like icon
+            ) : (
+              <ThumbUpOffAltIcon /> // Default like icon
+            )}
+            <span>Like</span>
+          </button>
+          <button>
+            <SmsIcon />
+            <span>Comments</span>
+          </button>
+          <button>
+            <RepeatIcon />
+            <span>Repost</span>
+          </button>
+          <button>
+            <SendIcon />
+            <span>Send</span>
+          </button>
         </div>
       </div>
     </div>

@@ -5,7 +5,12 @@
     box-shadow:  0px 0px 18px -8px rgba(0,0,0,0.68);
     margin: 30px 0;
 }
-
+@media (max-width: 636px) {
+    .post{
+     
+        border-radius: 0px;
+    }
+}
 .postWrapper{
     padding: 10px;
 }
@@ -52,8 +57,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top:  1px solid black;
-    padding: 10px;
+    border-bottom:  1px solid black;
+    padding: 0px 10px 10px 20px;
 }
 .postbottomLeft{
     display: flex;
@@ -76,3 +81,46 @@
     font-size: 15px;
 
 }
+.SocialActions{
+    display: flex;
+align-items: center;
+margin: 0px 3px;
+}
+
+.SocialActions button{
+    width: 100%;
+  border: none;
+  border-top: 1px solid 1px grey;
+  padding: 10px 8px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 3px 0px 3px ;
+  cursor: pointer;
+ 
+}
+.SocialActions button:hover{
+    background-color: #f3f3f3;
+
+}
+.likeButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .likeButton.animate {
+    animation: bounce 0.3s;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+  }
+  

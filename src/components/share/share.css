@@ -4,7 +4,12 @@
     -webkit-box-shodow: 0px 0px 18px -8px rgba(0, 0, 0, 0.68);
     box-shadow: 0px 0px 18px -8px rgba(0, 0, 0, 0.68);
 }
-
+@media (max-width: 636px) {
+    .share{
+     
+        border-radius: 0px;
+    }
+}
 
 .shareWrapper {
     padding: 10px;

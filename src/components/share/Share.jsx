@@ -55,7 +55,7 @@ export default function Share() {
           <Link to={`profile/${user.username}`}>
             <img
               className="shareProfileImg"
-              src={ person11}
+              src={person11}
               alt=""
             />
           </Link>

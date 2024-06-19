@@ -10,17 +10,17 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { serverUrl } from "../../utils/appConstants";
 import gift from "../../../public/assets/gift.png";
 import adpmg from "../../../public/assets/ad.png";
+import person11 from "../../../public/assets/person/11.jpeg";
 
 export default function Rightbar({ user }) {
   const PF = import.meta.env.VITE_PUBLIC_FOLDER;
   const currentUser = JSON.parse(localStorage.getItem('loginUser'))
-  
   const [friend, setFriend] = useState([]);
   const { dispatch } = useContext(AuthContext);
   const [follow, setFollow] = useState(
     currentUser?.followers.includes(user?._id)
   );
-  // console.log(currentUser, "user right bar");
+  console.log(currentUser, "user right bar");
 
   useEffect(() => {
     const getFriends = async () => {
@@ -118,9 +118,7 @@ export default function Rightbar({ user }) {
                 <img
                   className="rightbarFollowingImg"
                   src={
-                    friend.profilePicture
-                      ? PF + friend.profilePicture
-                      : PF + "person/11.jpeg"
+                    person11
                   }
                   alt=""
                 />

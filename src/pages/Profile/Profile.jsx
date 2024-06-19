@@ -21,7 +21,7 @@ export default function Profile() {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(`${serverUrl}/api/users?username=${username}`);
-        console.log("Response Data:", res.data);
+        // console.log("Response Data:", res.data);
         setUser(res.data);
       } catch (error) {
         console.error("Error fetching user:", error);
