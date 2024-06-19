@@ -6,18 +6,8 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import "./profile.css";
 const PF = import.meta.env.VITE_PUBLIC_FOLDER;
 
-import person1 from "../../../public/assets/person/1.jpeg";
-import person2 from "../../../public/assets/person/2.jpeg";
-import person3 from "../../../public/assets/person/3.jpeg";
-import person4 from "../../../public/assets/person/4.jpeg";
-import person5 from "../../../public/assets/person/5.jpeg";
-import person6 from "../../../public/assets/person/6.jpeg";
-import person7 from "../../../public/assets/person/7.jpeg";
-import person8 from "../../../public/assets/person/8.jpeg";
-import person9 from "../../../public/assets/person/9.jpeg";
-import person10 from "../../../public/assets/person/10.jpeg";
 import person11 from "../../../public/assets/person/11.jpeg";
-import person12 from "../../../public/assets/person/12.jpg";
+
 import noCover from "../../../public/assets/post/8.jpeg";
 import axios from "axios";
 import { useParams } from "react-router-dom";

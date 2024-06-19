@@ -95,58 +95,68 @@ const  Posts =
 ]
 export default Posts;
 
+import person1 from "../public/assets/person/1.jpeg";
+import person2 from "../public/assets/person/2.jpeg";
+import person3 from "../public/assets/person/3.jpeg";
+import person4 from "../public/assets/person/4.jpeg";
+import person5 from "../public/assets/person/5.jpeg";
+import person6 from "../public/assets/person/6.jpeg";
+import person7 from "../public/assets/person/7.jpeg";
+import person8 from "../public/assets/person/8.jpeg";
+import person9 from "../public/assets/person/9.jpeg";
+import person10 from "../public/assets/person/10.jpeg";
 
 
 
  export const Users = [
    {
      id: 1,
-     profilePicture: "public/assets/person/1.jpeg",
+     profilePicture: person1,
      username: "Safak",
    },
    {
      id: 2,
-     profilePicture: "public/assets/person/2.jpeg",
+     profilePicture: person2,
      username: "Sameer",
    },
    {
      id: 3,
-     profilePicture: "public/assets/person/3.jpeg",
+     profilePicture: person3,
      username: "Talha",
    },
    {
      id: 4,
-     profilePicture: "public/assets/person/4.jpeg",
+     profilePicture: person4,
      username: "Haroon",
    },
    {
      id: 5,
-     profilePicture: "public/assets/person/5.jpeg",
+     profilePicture: person5,
      username: "Jon Doe",
    },
    {
      id: 6,
-     profilePicture: "public/assets/person/6.jpeg",
+     profilePicture: person6,
      username: "Sheraz",
    },
    {
      id: 7,
-     profilePicture: "public/assets/person/7.jpeg",
+     profilePicture: person7,
      username: "Ahad",
    },
    {
      id: 8,
-     profilePicture: "public/assets/person/8.jpeg",
+     profilePicture: person8,
      username: "Razzak",
    },
    {
      id: 9,
-     profilePicture: "public/assets/person/9.jpeg",
+     profilePicture: person9,
      username: "Alex Durden",
    },
    {
      id: 10,
-     profilePicture: "public/assets/person/10.jpeg",
+     profilePicture: person10,
      username: "Faizan",
    },
  ];
