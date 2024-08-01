@@ -1,3 +1,11 @@
+.rightbarFriend{
+    cursor: pointer;
+}
+.rightbarFriend:hover{
+    background-color: #f6f6f6;
+
+}
+
 .rightbarPrifileImgContainer{
     margin: 10px;
     position: relative;

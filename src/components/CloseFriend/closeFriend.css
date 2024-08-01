@@ -2,6 +2,12 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+}
+.sidebarFriend:hover{
+    background-color: #f6f6f6;
+
 }
 .sidebarFriendImg{
     width: 32px;

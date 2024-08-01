@@ -20,14 +20,14 @@ export default function Rightbar({ user }) {
   const [follow, setFollow] = useState(
     currentUser?.followers.includes(user?._id)
   );
-  console.log(currentUser, "user right bar");
+  // console.log(currentUser, "user right bar");
 
   useEffect(() => {
     const getFriends = async () => {
       try {
         const friendList = await axios.get(`${serverUrl}/api/users/friends/` + currentUser?._id);
         setFriend(friendList.data);
-        console.log(friendList.data, "frienlist data");
+        // console.log(friendList.data, "frienlist data");
       } catch (error) {
         console.log(error);
       }

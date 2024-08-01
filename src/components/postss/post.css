@@ -50,7 +50,7 @@
     margin-top: 20px;
     width: 100%;
     max-height: 500px;
-    object-fit: contain;
+    object-fit:cover;
 }
 
 .postBottom{
@@ -81,6 +81,23 @@
     font-size: 15px;
 
 }
+
+.postTopRight{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+}
+.postTopRight:hover{
+
+    background-color: #f6f6f6;
+}
+
+
 .SocialActions{
     display: flex;
 align-items: center;
