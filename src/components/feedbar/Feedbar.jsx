@@ -10,13 +10,13 @@ import Loder from "../../../public/assets/person/loder.gif";
 
 export default function Feedbar({ username }) {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true); // لوڈنگ اسٹیٹ
+  const [loading, setLoading] = useState(true); // 
   // const { user } = useContext(AuthContext);
   const user = JSON.parse(localStorage.getItem('loginUser'));
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true); // پوسٹس لوڈ ہونے سے پہلے لوڈنگ اسٹیٹ true کر دیں
+      setLoading(true); //
       try {
         const res = username 
           ? await axios.get(`${serverUrl}/api/posts/profile/` + username) 
@@ -29,7 +29,7 @@ export default function Feedbar({ username }) {
       } catch (error) {
         console.error("Error fetching posts:", error);
       } finally {
-        setLoading(false); // پوسٹس لوڈ ہو جانے کے بعد لوڈنگ اسٹیٹ false کر دیں
+        setLoading(false); // 
       }
     };
     fetchPosts();

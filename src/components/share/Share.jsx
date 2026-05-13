@@ -17,35 +17,75 @@ export default function Share() {
   const desc = useRef();
   const [file, setFile] = useState(null);
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
-    const newPost = {
-      userId: user._id,
-      desc: desc.current.value,
-    };
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
+  //   const newPost = {
+  //     userId: user._id,
+  //     desc: desc.current.value,
+  //   };
+
+  //   if (file) {
+  //     const data = new FormData();
+  //     const fileName = Date.now() + file.name;
+  //     data.append("name", fileName);
+  //     data.append("file", file);
+
+  //     try {
+  //       const uploadRes = await axios.post(`${serverUrl}/api/upload`, data);
+  //       console.log("File upload:", uploadRes.data);
+  //       newPost.img = uploadRes.data.url; // Assign the Cloudinary URL to newPost.img
+  //     } catch (error) {
+  //       console.log("Error uploading file:", error);
+  //     }
+  //   }
+  //   try {
+  //     await axios.post(`${serverUrl}/api/posts`, newPost);
+  //     console.log(newPost , "new poZZZZZZZZst");
+  //     window.location.reload();
+  //   } catch (error) {
+  //     console.log("Error creating post:", error);
+  //   }
+  // };
+const submitHandler = async (e) => {
+  e.preventDefault();
+
+  const newPost = {
+    userId: user._id,
+    desc: desc.current.value,
+  };
+
+  try {
+    let imageUrl = "";
 
     if (file) {
       const data = new FormData();
-      const fileName = Date.now() + file.name;
-      data.append("name", fileName);
-      data.append("file", file);
+      data.append("file", file); // ✅ ONLY THIS
 
-      try {
-        const uploadRes = await axios.post(`${serverUrl}/api/upload`, data);
-        console.log("File upload:", uploadRes.data);
-        newPost.img = uploadRes.data.url; // Assign the Cloudinary URL to newPost.img
-      } catch (error) {
-        console.log("Error uploading file:", error);
-      }
+      const uploadRes = await axios.post(
+        `${serverUrl}/api/upload`,
+        data
+      );
+
+      console.log("UPLOAD RESPONSE:", uploadRes.data);
+
+      imageUrl = uploadRes.data.url;
     }
-    try {
-      await axios.post(`${serverUrl}/api/posts`, newPost);
-      console.log(newPost , "new poZZZZZZZZst");
-      window.location.reload();
-    } catch (error) {
-      console.log("Error creating post:", error);
+
+    if (imageUrl) {
+      newPost.img = imageUrl;
     }
-  };
+
+    await axios.post(`${serverUrl}/api/posts`, newPost);
+
+    console.log("POST CREATED:", newPost);
+
+    window.location.reload();
+  } catch (error) {
+    console.log("ERROR:", error);
+  }
+};
+
+
   console.log(file, "file  batao name ma kiya a raha ha  ");
   
   return (
